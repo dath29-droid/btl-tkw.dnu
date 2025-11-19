@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tài nguyên - MindCare</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .quiz-card {
+      display: none;
+      background: #fff;
+      padding: 22px;
+      border-radius: 14px;
+      margin-top: 16px;
+      box-shadow: 0 8px 24px rgba(8,36,62,0.07);
+      animation: fadeIn .35s ease;
+    }
+
+    .quiz-card:target {
+      display: block;
+    }
+
+    body:not(:target) #q1 {
+      display: block;
+    }
+
+    .option input[type="radio"] {
+      display: none;
+    }
+
+    .option {
+      display: block;
+      background: #f7fbff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #dfeaf6;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.2s, border 0.2s;
+    }
+
+    .option:hover {
+      background: #eaf4ff;
+    }
+
+    .option input[type="radio"]:checked + label,
+    .option input[type="radio"]:checked {
+      background: #d0ebff;
+      border-color: #0b6aa6;
+    }
+
+    .btn-nav {
+      background: #0b6aa6;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .btn-back {
+      background: #9ca9b7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo"><span class="icon"></span><strong>Hoàng Đạt</strong></div>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="tu-van.html">Tư vấn</a>
+      <a href="tai-nguyen.html" class="active">Tài nguyên</a>
+    </nav>
+    <div><button class="cta">Đặt lịch ngay</button></div>
+  </div>
+</header>
+
+<main>
+  <section class="container" style="padding-top:36px;padding-bottom:36px">
+
+    <h2 style="text-align:center;color:#0b6aa6;margin-bottom:6px">
+      Tài nguyên sức khỏe tâm lý
+    </h2>
+    <p style="text-align:center;color:var(--muted)">
+      Khám phá các bài viết, video và bài quiz giúp bạn chăm sóc sức khỏe tinh thần.
+    </p>
+ 
+    <h3 style="margin-top:36px">Bài viết nổi bật</h3>
+    <div class="resource-grid">
+
+      <div class="resource">
+        <img src="/image/caycoi.png" alt="">
+        <div class="card-content">
+          <small>Stress • 5 phút</small>
+          <h4>Cách quản lý căng thẳng công việc hiệu quả</h4>
+          <p>Khám phá các kỹ thuật đơn giản giúp bạn giảm thiểu căng thẳng và tăng năng suất làm việc.</p>
+          <p class="read-more">Đọc thêm →</p>
+        </div>
+      </div>
+  
+      <div class="resource">
+        <img src="/image/ngoithuyen.png" alt="">
+        <div class="card-content">
+          <small>Sức khỏe tâm lý • 7 phút</small>
+          <h4>10 dấu hiệu bạn đang bị kiệt sức</h4>
+          <p>Nhận biết sớm các dấu hiệu kiệt sức để có biện pháp can thiệp kịp thời.</p>
+          <p class="read-more">Đọc thêm →</p>
+        </div>
+      </div>
+      
+      <div class="resource">
+        <img src="/image/uoa.png" alt="">
+        <div class="card-content">
+          <small>Thư giãn • 6 phút</small>
+          <h4>Thiền chánh niệm cho người mới bắt đầu</h4>
+          <p>Hướng dẫn chi tiết về thiền chánh niệm và lợi ích cho sức khỏe tâm lý.</p>
+          <p class="read-more">Đọc thêm →</p>
+        </div>
+      </div>
+
+    </div>
+  
+    <h3 style="margin-top:36px">Video thư giãn</h3>
+
+    <div class="resource-grid">
+
+      <div class="resource video-card">
+        <iframe src="https://www.youtube.com/embed/tybOi4hjZFQ" allowfullscreen></iframe>
+        <small>Thư giãn</small>
+        <h4>Hít thở sâu - Kỹ thuật giảm căng thẳng nhanh</h4>
+      </div>
+
+      <div class="resource video-card">
+        <iframe src="https://www.youtube.com/embed/v7AYKMP6rOE" allowfullscreen></iframe>
+        <small>Thư giãn</small>
+        <h4>Yoga buổi sáng cho tinh thần tỉnh táo</h4>
+      </div>
+
+      <div class="resource video-card">
+        <iframe src="https://www.youtube.com/embed/aEqlQvczMJQ" allowfullscreen></iframe>
+        <small>Thư giãn</small>
+        <h4>Thiền hướng dẫn cho giấc ngủ ngon</h4>
+      </div>
+
+    </div>
+  
+    <h3 style="margin-top:36px">Quiz tự đánh giá sức khỏe tâm lý</h3>
+    
+    <!-- Quiz -->
+    <div id="q1" class="quiz-card">
+      <p><strong>Câu hỏi 1/5</strong></p>
+      <p>Trong 2 tuần qua, bạn có thường xuyên cảm thấy buồn chán hoặc tuyệt vọng không?</p>
+
+      <label class="option"><input type="radio" name="q1"> Không bao giờ</label>
+      <label class="option"><input type="radio" name="q1"> Thỉnh thoảng</label>
+      <label class="option"><input type="radio" name="q1"> Thường xuyên</label>
+      <label class="option"><input type="radio" name="q1"> Hầu như mọi ngày</label>
+
+      <div style="margin-top:16px;text-align:right">
+        <a class="btn-nav" href="#q2">Tiếp theo</a>
+      </div>
+    </div>
+   
+    <div id="q2" class="quiz-card">
+      <p><strong>Câu hỏi 2/5</strong></p>
+      <p>Bạn có cảm thấy ít hứng thú hoặc niềm vui khi làm những việc mình từng thích không?</p>
+
+      <label class="option"><input type="radio" name="q2"> Không bao giờ</label>
+      <label class="option"><input type="radio" name="q2"> Thỉnh thoảng</label>
+      <label class="option"><input type="radio" name="q2"> Thường xuyên</label>
+      <label class="option"><input type="radio" name="q2"> Hầu như mọi ngày</label>
+
+      <div class="nav-row">
+        <a class="btn-nav btn-back" href="#q1">Quay lại</a>
+        <a class="btn-nav" href="#q3">Tiếp theo</a>
+      </div>
+    </div>
+    
+    <div id="q3" class="quiz-card">
+      <p><strong>Câu hỏi 3/5</strong></p>
+      <p>Bạn có gặp khó khăn trong việc ngủ hoặc ngủ quá nhiều không?</p>
+
+      <label class="option"><input type="radio" name="q3"> Không bao giờ</label>
+      <label class="option"><input type="radio" name="q3"> Thỉnh thoảng</label>
+      <label class="option"><input type="radio" name="q3"> Thường xuyên</label>
+      <label class="option"><input type="radio" name="q3"> Hầu như mọi ngày</label>
+
+      <div class="nav-row">
+        <a class="btn-nav btn-back" href="#q2">Quay lại</a>
+        <a class="btn-nav" href="#q4">Tiếp theo</a>
+      </div>
+    </div>
+  
+    <div id="q4" class="quiz-card">
+      <p><strong>Câu hỏi 4/5</strong></p>
+      <p>Bạn có cảm thấy mệt mỏi hoặc thiếu năng lượng không?</p>
+
+      <label class="option"><input type="radio" name="q4"> Không bao giờ</label>
+      <label class="option"><input type="radio" name="q4"> Thỉnh thoảng</label>
+      <label class="option"><input type="radio" name="q4"> Thường xuyên</label>
+      <label class="option"><input type="radio" name="q4"> Hầu như mọi ngày</label>
+
+      <div class="nav-row">
+        <a class="btn-nav btn-back" href="#q3">Quay lại</a>
+        <a class="btn-nav" href="#q5">Tiếp theo</a>
+      </div>
+    </div>
+  
+    <div id="q5" class="quiz-card">
+      <p><strong>Câu hỏi 5/5</strong></p>
+      <p>Bạn có cảm thấy mình là gánh nặng hoặc thất bại không?</p>
+
+      <label class="option"><input type="radio" name="q5"> Không bao giờ</label>
+      <label class="option"><input type="radio" name="q5"> Thỉnh thoảng</label>
+      <label class="option"><input type="radio" name="q5"> Thường xuyên</label>
+      <label class="option"><input type="radio" name="q5"> Hầu như mọi ngày</label>
+
+      <div class="nav-row">
+        <a class="btn-nav btn-back" href="#q4">Quay lại</a>
+        <a class="btn-nav" href="#done">Hoàn thành</a>
+      </div>
+    </div>
+
+    <div id="done" class="quiz-card">
+      <p><strong>🎉 Bạn đã hoàn thành bài Quiz!</strong></p>
+      <p>Cảm ơn bạn đã trả lời. Chúc bạn luôn khỏe mạnh.</p>
+
+      <div style="margin-top:16px">
+        <a class="btn-nav btn-back" href="#q1">Làm lại</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-col">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="icon circle"></span>
+          <strong>Hoàng Đạt</strong>
+        </div>
+        <p style="margin-top:12px;color:#cfe7ff">
+          Đồng hành cùng bạn trên hành trình chăm sóc sức khỏe tâm lý.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Liên kết</h5>
+        <p><a href="index.html">Trang chủ</a></p>
+        <p><a href="tu-van.html">Tư vấn</a></p>
+        <p><a href="tai-nguyen.html">Tài nguyên</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Hỗ trợ</h5>
+        <p><a href="#">Câu hỏi thường gặp</a></p>
+        <p><a href="#">Chính sách bảo mật</a></p>
+        <p><a href="#">Điều khoản sử dụng</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Liên hệ</h5>
+        <p>Email: dath3226@gmail.com</p>
+        <p>Hotline: 0986829807</p>
+        <p>Địa chỉ: số 1 Phố Xóm, Hà Đông, Hà Nội</p>
+      </div>
+
+    </div>
+
+    <div class="footer-copy">
+      © 2025 Hoàng Đạt. All rights reserved.
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
+
+
+
+
+

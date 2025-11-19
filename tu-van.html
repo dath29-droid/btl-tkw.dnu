@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tư vấn - MindCare</title>
+
+<style>
+:root {
+  --card: #ffffff;
+  --muted: #7d8da5;
+  --primary: #0b6aa6;
+  --primary-light: #42caff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+}
+
+.header {
+  background: #0b1e39;
+  padding: 12px 0;
+  color: white;
+}
+.header-inner {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header a {
+  color: white;
+  margin-left: 18px;
+  text-decoration: none;
+}
+.cta {
+  background: #4ac8ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 36px 0;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d4e4f3;
+  font-size: 14px;
+  margin-top: 4px;
+  background: white;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #42caff, #3bb5ff);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  background: #e9f3ff;
+  color: #0b6aa6;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 30px;
+  background: #e9f3ff;
+  color: #0b6aa6;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+.tab-content {
+  display: none;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 16px;
+  box-shadow: 0 12px 30px rgba(8,36,62,0.06);
+}
+
+#tab-form {
+  display: block;
+}
+
+.tab-content:target {
+  display: block;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #e9eef5;
+}
+
+footer {
+  background: linear-gradient(180deg,#0a1c33,#0b233e);
+  color: #cfe7ff;
+  margin-top: 40px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+.footer-inner {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-col {
+  min-width: 180px;
+  margin-bottom: 16px;
+}
+.footer-col a {
+  color: #cfe7ff;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <strong>Hoàng Đạt</strong>
+    </div>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="tu-van.html">Tư vấn</a>
+      <a href="tai-nguyen.html">Tài nguyên</a>
+    </nav>
+    <button class="cta">Đặt lịch ngay</button>
+  </div>
+</header>
+
+<main>
+  <section class="container">
+    <h2 style="text-align:center;color:var(--primary)">Tư vấn trực tuyến</h2>
+    <p style="text-align:center;color:var(--muted)">
+      Bắt đầu cuộc trò chuyện với chuyên gia tâm lý hoặc đặt lịch tư vấn
+    </p>
+
+    <div style="display:flex; gap:12px; margin-top:24px">
+      <a href="#tab-form" class="tab-btn">Form câu hỏi</a>
+      <a href="#tab-chat" class="tab-btn">Chat với chuyên gia</a>
+      <a href="#tab-history" class="tab-btn">Lịch sử phiên</a>
+    </div>
+
+    <!-- FORM TAB -->
+    <div id="tab-form" class="tab-content">
+      <form class="form-card">
+        <div style="display:flex;gap:12px">
+          <div style="flex:1">
+            <label>Họ và tên *</label>
+            <input type="text" name="fullname" class="input" placeholder="Nguyễn Văn A">
+          </div>
+          <div style="flex:1">
+            <label>Email *</label>
+            <input type="email" name="email" class="input" placeholder="email@example.com">
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>Số điện thoại</label>
+          <input type="tel" name="phone" class="input" placeholder="0123456789">
+        </div>
+
+        <div style="margin-top:12px">
+          <label>Bạn muốn tư vấn về vấn đề gì? *</label>
+          <textarea name="topic" class="input" placeholder="Mô tả ngắn gọn..."></textarea>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:12px">
+          <div style="flex:1">
+            <label>Ngày muốn tư vấn</label>
+            <input type="date" name="date" class="input">
+          </div>
+          <div style="flex:1">
+            <label>Khung giờ ưu tiên</label>
+            <select name="time_slot" class="input">
+              <option>Chọn khung giờ</option>
+              <option>8:00 - 10:00</option>
+              <option>10:00 - 12:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;text-align:center">
+          <button type="submit" class="btn-primary" style="width:100%;max-width:640px">
+            Gửi thông tin và bắt đầu tư vấn
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- CHAT TAB -->
+    <div id="tab-chat" class="tab-content">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+        <div style="width:46px;height:46px;background:#d9ecff;border-radius:50%"></div>
+        <div>
+          <strong>Nguyễn Thị Mai</strong><br>
+          <small>Chuyên gia tâm lý</small>
+        </div>
+      </div>
+      <div style="
+        height:260px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:#9bb4c9;
+        border:1px dashed #cddfee;
+        border-radius:12px;">
+        Vui lòng điền form câu hỏi ban đầu để bắt đầu chat
+      </div>
+    </div>
+
+    <!-- HISTORY TAB -->
+    <div id="tab-history" class="tab-content">
+      <div class="history-item">
+        <div>
+          <strong>Nguyễn Thị Mai</strong><br>
+          <small>15/11/2025 • 14:00</small>
+        </div>
+        <div>
+          <span style="padding:6px 12px;background:#eafff3;color:#32c770;border-radius:6px">
+            Đã hoàn thành
+          </span>
+          <a href="#" style="margin-left:10px;color:#0b6aa6">Xem chi tiết</a>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div>
+          <strong>Trần Văn Hùng</strong><br>
+          <small>10/11/2025 • 10:00</small>
+        </div>
+        <div>
+          <span style="padding:6px 12px;background:#eafff3;color:#32c770;border-radius:6px">
+            Đã hoàn thành
+          </span>
+          <a href="#" style="margin-left:10px;color:#0b6aa6">Xem chi tiết</a>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div>
+          <strong>Lê Thị Lan</strong><br>
+          <small>20/11/2025 • 16:00</small>
+        </div>
+        <div>
+          <span style="padding:6px 12px;background:#e7f4ff;color:#3a8cff;border-radius:6px">
+            Đã đặt lịch
+          </span>
+          <a href="#" style="margin-left:10px;color:#0b6aa6">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <strong>Hoàng Đạt</strong>
+      <p style="margin-top:12px;">Đồng hành cùng bạn trên hành trình chăm sóc sức khỏe tâm lý.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Liên kết</h5>
+      <p><a href="index.html">Trang chủ</a></p>
+      <p><a href="tu-van.html">Tư vấn</a></p>
+      <p><a href="tai-nguyen.html">Tài nguyên</a></p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Hỗ trợ</h5>
+      <p><a href="#">Câu hỏi thường gặp</a></p>
+      <p><a href="#">Chính sách bảo mật</a></p>
+      <p><a href="#">Điều khoản sử dụng</a></p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Liên hệ</h5>
+      <p>Email: dath3226@gmail.com</p>
+      <p>Hotline: 0986829807</p>
+      <p>Địa chỉ: số 1 Phố Xóm, Hà Đông, Hà Nội</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:18px;color:#8fb0d9">
+    © 2025 Hoàng Đạt. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
+
